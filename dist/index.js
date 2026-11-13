@@ -59,38 +59,64 @@ var itemVariants = {
 import { motion } from "motion/react";
 
 // src/SettingsPageComponent/components/SettingsPageItem.tsx
+import { jsx, jsxs } from "react/jsx-runtime";
 function SettingsPageItem({
   options: { id, title, description, icon }
 }) {
-  return /* @__PURE__ */ React.createElement("div", { id, className: "settings-page-item clickable" }, /* @__PURE__ */ React.createElement("span", { className: "settings-page-item-icon" }, icon), /* @__PURE__ */ React.createElement("span", { className: "settings-page-item-text" }, /* @__PURE__ */ React.createElement("span", { className: "settings-page-item-text-t" }, title), /* @__PURE__ */ React.createElement("span", { className: "settings-page-item-text-d" }, description)));
+  return /* @__PURE__ */ jsxs("div", { id, className: "settings-page-item clickable", children: [
+    /* @__PURE__ */ jsx("span", { className: "settings-page-item-icon", children: icon }),
+    /* @__PURE__ */ jsxs("span", { className: "settings-page-item-text", children: [
+      /* @__PURE__ */ jsx("span", { className: "settings-page-item-text-t", children: title }),
+      /* @__PURE__ */ jsx("span", { className: "settings-page-item-text-d", children: description })
+    ] })
+  ] });
 }
 
 // src/SettingsPageComponent/components/SettingsProfileCard.tsx
+import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 function SettingsProfileCard({ name, email, icon }) {
-  return /* @__PURE__ */ React.createElement("div", { className: "settings-profile-card" }, /* @__PURE__ */ React.createElement("div", { className: "settings-profile-card-icon" }, icon), /* @__PURE__ */ React.createElement("div", { className: "settings-profile-card-text" }, /* @__PURE__ */ React.createElement("span", { className: "settings-profile-card-text-1" }, name), /* @__PURE__ */ React.createElement("span", { className: "settings-profile-card-text-2" }, email)));
+  return /* @__PURE__ */ jsxs2("div", { className: "settings-profile-card", children: [
+    /* @__PURE__ */ jsx2("div", { className: "settings-profile-card-icon", children: icon }),
+    /* @__PURE__ */ jsxs2("div", { className: "settings-profile-card-text", children: [
+      /* @__PURE__ */ jsx2("span", { className: "settings-profile-card-text-1", children: name }),
+      /* @__PURE__ */ jsx2("span", { className: "settings-profile-card-text-2", children: email })
+    ] })
+  ] });
 }
 
 // src/SettingsPageComponent/styles/icons.tsx
-var BackArrowIcon = () => /* @__PURE__ */ React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, /* @__PURE__ */ React.createElement("path", { d: "m12 19-7-7 7-7" }), /* @__PURE__ */ React.createElement("path", { d: "M19 12H5" }));
-var SearchIcon = () => /* @__PURE__ */ React.createElement("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, /* @__PURE__ */ React.createElement("circle", { cx: "11", cy: "11", r: "8" }), /* @__PURE__ */ React.createElement("path", { d: "m21 21-4.3-4.3" }));
+import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
+var BackArrowIcon = () => /* @__PURE__ */ jsxs3("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
+  /* @__PURE__ */ jsx3("path", { d: "m12 19-7-7 7-7" }),
+  /* @__PURE__ */ jsx3("path", { d: "M19 12H5" })
+] });
+var SearchIcon = () => /* @__PURE__ */ jsxs3("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
+  /* @__PURE__ */ jsx3("circle", { cx: "11", cy: "11", r: "8" }),
+  /* @__PURE__ */ jsx3("path", { d: "m21 21-4.3-4.3" })
+] });
 
 // src/SettingsPageComponent/components/SettingsSearchBar.tsx
+import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
 function SettingsSearchBar({ placeholder = "Search...", onChange }) {
-  return /* @__PURE__ */ React.createElement("div", { className: "settings-search-bar" }, /* @__PURE__ */ React.createElement(SearchIcon, null), /* @__PURE__ */ React.createElement(
-    "input",
-    {
-      onChange: onChange ? (e) => onChange(e.target.value) : void 0,
-      type: "search",
-      placeholder,
-      className: "settings-search"
-    }
-  ));
+  return /* @__PURE__ */ jsxs4("div", { className: "settings-search-bar", children: [
+    /* @__PURE__ */ jsx4(SearchIcon, {}),
+    /* @__PURE__ */ jsx4(
+      "input",
+      {
+        onChange: onChange ? (e) => onChange(e.target.value) : void 0,
+        type: "search",
+        placeholder,
+        className: "settings-search"
+      }
+    )
+  ] });
 }
 
 // src/SettingsPageComponent/types/SettingsPageTypes.ts
 var PROFILE_ID = "__profile_01";
 
 // src/SettingsPageComponent/components/SettingsPage.tsx
+import { Fragment, jsx as jsx5, jsxs as jsxs5 } from "react/jsx-runtime";
 function SettingsPage({ items, profileCard, searchBar, options }) {
   const allItems = items.some((i) => i.id === PROFILE_ID) ? items : [
     ...items,
@@ -98,7 +124,7 @@ function SettingsPage({ items, profileCard, searchBar, options }) {
       id: PROFILE_ID,
       title: "Profile",
       description: "Manage your profile information",
-      icon: /* @__PURE__ */ React.createElement(React.Fragment, null),
+      icon: /* @__PURE__ */ jsx5(Fragment, {}),
       content: profileCard.content
     }
   ];
@@ -118,49 +144,63 @@ function SettingsPage({ items, profileCard, searchBar, options }) {
   }, [min_width]);
   const [selectedPageId, setSelectedPageId] = useState(null);
   const selectedPage = settingsItems.find((page) => page.id === selectedPageId) ?? null;
-  return /* @__PURE__ */ React.createElement("div", { className: "settings-page" }, /* @__PURE__ */ React.createElement("nav", { className: "settings-nav", "data-is-item-selected": !!selectedPage }, /* @__PURE__ */ React.createElement("h1", { className: "settings-h1" }, "Settings"), !(options == null ? void 0 : options.hideSearchBar) && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(SettingsSearchBar, { placeholder: searchBar == null ? void 0 : searchBar.placeholder, onChange: setSearchQuery })), /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      onClick: () => setSelectedPageId(PROFILE_ID),
-      className: "clickable setting-pf-ctnr"
-    },
-    (options == null ? void 0 : options.hideProfileCard) ? /* @__PURE__ */ React.createElement(React.Fragment, null, "\xA0") : /* @__PURE__ */ React.createElement(SettingsProfileCard, { icon: profileCard.icon, email: profileCard.email, name: profileCard.name })
-  ), /* @__PURE__ */ React.createElement(
-    motion.div,
-    {
-      className: "settings-page-items",
-      variants: containerVariants,
-      initial: "hidden",
-      animate: isDesktop || !selectedPage ? "show" : "hidden"
-    },
-    settingsItems.filter((item) => item.id !== PROFILE_ID).map((item) => /* @__PURE__ */ React.createElement(
-      motion.div,
+  return /* @__PURE__ */ jsxs5("div", { className: "settings-page", children: [
+    /* @__PURE__ */ jsxs5("nav", { className: "settings-nav", "data-is-item-selected": !!selectedPage, children: [
+      /* @__PURE__ */ jsx5("h1", { className: "settings-h1", children: "Settings" }),
+      !options?.hideSearchBar && /* @__PURE__ */ jsx5("div", { children: /* @__PURE__ */ jsx5(SettingsSearchBar, { placeholder: searchBar?.placeholder, onChange: setSearchQuery }) }),
+      /* @__PURE__ */ jsx5(
+        "div",
+        {
+          onClick: () => setSelectedPageId(PROFILE_ID),
+          className: "clickable setting-pf-ctnr",
+          children: options?.hideProfileCard ? /* @__PURE__ */ jsx5(Fragment, { children: "\xA0" }) : /* @__PURE__ */ jsx5(SettingsProfileCard, { icon: profileCard.icon, email: profileCard.email, name: profileCard.name })
+        }
+      ),
+      /* @__PURE__ */ jsx5(
+        motion.div,
+        {
+          className: "settings-page-items",
+          variants: containerVariants,
+          initial: "hidden",
+          animate: isDesktop || !selectedPage ? "show" : "hidden",
+          children: settingsItems.filter((item) => item.id !== PROFILE_ID).map((item) => /* @__PURE__ */ jsx5(
+            motion.div,
+            {
+              variants: itemVariants,
+              onClick: () => setSelectedPageId(item.id),
+              children: /* @__PURE__ */ jsx5(SettingsPageItem, { options: item })
+            },
+            item.id
+          ))
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsx5(
+      motion.section,
       {
-        key: item.id,
-        variants: itemVariants,
-        onClick: () => setSelectedPageId(item.id)
+        className: "settings-page-subpage",
+        variants: containerVariants,
+        initial: "hidden",
+        animate: "show",
+        children: selectedPage ? /* @__PURE__ */ jsxs5(motion.div, { variants: itemVariants, children: [
+          /* @__PURE__ */ jsxs5(
+            "div",
+            {
+              className: "settings-page-subpage-back clickable",
+              onClick: () => setSelectedPageId(null),
+              children: [
+                /* @__PURE__ */ jsx5(BackArrowIcon, {}),
+                /* @__PURE__ */ jsx5("span", { children: "Back" })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsx5("h1", { className: "settings-h1", children: selectedPage.title }),
+          /* @__PURE__ */ jsx5("div", { children: selectedPage.content })
+        ] }) : isDesktop && /* @__PURE__ */ jsx5("h1", { className: "settings-h1", children: "Select a Category From the Left" })
       },
-      /* @__PURE__ */ React.createElement(SettingsPageItem, { options: item })
-    ))
-  )), /* @__PURE__ */ React.createElement(
-    motion.section,
-    {
-      key: selectedPageId ?? "settings-list",
-      className: "settings-page-subpage",
-      variants: containerVariants,
-      initial: "hidden",
-      animate: "show"
-    },
-    selectedPage ? /* @__PURE__ */ React.createElement(motion.div, { variants: itemVariants }, /* @__PURE__ */ React.createElement(
-      "div",
-      {
-        className: "settings-page-subpage-back clickable",
-        onClick: () => setSelectedPageId(null)
-      },
-      /* @__PURE__ */ React.createElement(BackArrowIcon, null),
-      /* @__PURE__ */ React.createElement("span", null, "Back")
-    ), /* @__PURE__ */ React.createElement("h1", { className: "settings-h1" }, selectedPage.title), /* @__PURE__ */ React.createElement("div", null, selectedPage.content)) : isDesktop && /* @__PURE__ */ React.createElement("h1", { className: "settings-h1" }, "Select a Category From the Left")
-  ));
+      selectedPageId ?? "settings-list"
+    )
+  ] });
 }
 
 // src/SettingsPageComponent/components/SettingsThemesPage.tsx
@@ -283,6 +323,7 @@ function applyTheme(themeId, customThemes = []) {
 var thisOrDefaultThemeId = (themeId) => themeId || DEFAULT_THEME_ID;
 
 // src/SettingsPageComponent/components/SettingsThemesPage.tsx
+import { jsx as jsx6, jsxs as jsxs6 } from "react/jsx-runtime";
 function SettingsThemesPage({ excludePreloadedThemes = [], hideAllPreloadedThemes, themes = [], onThemeChange, activeThemeId }) {
   const themesData = hideAllPreloadedThemes ? [...PreloadedThemes.filter((t) => t.id == DEFAULT_THEME_ID), ...themes] : (
     // hide all themes other than default one
@@ -298,25 +339,30 @@ function SettingsThemesPage({ excludePreloadedThemes = [], hideAllPreloadedTheme
     if (onThemeChange) onThemeChange(theme);
   }
   if (themesData.length <= 0)
-    return /* @__PURE__ */ React.createElement("div", { className: "settings-themes" }, "No Themes Available");
-  return /* @__PURE__ */ React.createElement("div", { className: "settings-themes" }, getAllThemeTypes(themesData).map((type) => /* @__PURE__ */ React.createElement("section", { className: "settings-themes-group", key: type }, /* @__PURE__ */ React.createElement("h2", { className: "settings-h2" }, type === "light" ? "Light themes" : "Dark themes"), /* @__PURE__ */ React.createElement("div", { className: "settings-themes-list" }, themesData.filter((theme) => theme.type === type).filter((theme) => !excludePreloadedThemes.includes(theme.id)).map((theme) => /* @__PURE__ */ React.createElement(
-    "div",
-    {
-      "data-selected": currentSelectedId === theme.id,
-      className: "settings-theme clickable",
-      key: theme.id,
-      onClick: () => handleThemeApplyClick(theme)
-    },
-    /* @__PURE__ */ React.createElement("span", { className: "settings-theme-palette" }, Object.values(theme.colors).map((color, i) => /* @__PURE__ */ React.createElement(
-      "span",
+    return /* @__PURE__ */ jsx6("div", { className: "settings-themes", children: "No Themes Available" });
+  return /* @__PURE__ */ jsx6("div", { className: "settings-themes", children: getAllThemeTypes(themesData).map((type) => /* @__PURE__ */ jsxs6("section", { className: "settings-themes-group", children: [
+    /* @__PURE__ */ jsx6("h2", { className: "settings-h2", children: type === "light" ? "Light themes" : "Dark themes" }),
+    /* @__PURE__ */ jsx6("div", { className: "settings-themes-list", children: themesData.filter((theme) => theme.type === type).filter((theme) => !excludePreloadedThemes.includes(theme.id)).map((theme) => /* @__PURE__ */ jsxs6(
+      "div",
       {
-        className: "settings-theme-color",
-        key: i,
-        style: { backgroundColor: color }
-      }
-    ))),
-    /* @__PURE__ */ React.createElement("span", { className: "settings-theme-name" }, theme.name)
-  ))))));
+        "data-selected": currentSelectedId === theme.id,
+        className: "settings-theme clickable",
+        onClick: () => handleThemeApplyClick(theme),
+        children: [
+          /* @__PURE__ */ jsx6("span", { className: "settings-theme-palette", children: Object.values(theme.colors).map((color, i) => /* @__PURE__ */ jsx6(
+            "span",
+            {
+              className: "settings-theme-color",
+              style: { backgroundColor: color }
+            },
+            i
+          )) }),
+          /* @__PURE__ */ jsx6("span", { className: "settings-theme-name", children: theme.name })
+        ]
+      },
+      theme.id
+    )) })
+  ] }, type)) });
 }
 export {
   CURRENT_THEME_ID,

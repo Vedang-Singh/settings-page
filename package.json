@@ -19,7 +19,6 @@
     "dev": "vite",
     "build:app": "tsc -b && vite build",
     "build": "tsup",
-    "prepare": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -7,4 +7,5 @@ export default defineConfig({
   clean: true, // clean dist folder
   external: ["react", "react-dom"], // Do NOT bundle React
   injectStyle: true,
+  tsconfig: "tsconfig.app.json",
 });

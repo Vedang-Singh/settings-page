@@ -143,13 +143,13 @@ type SettingsProfileCardProps = {
     email: string;
     icon: React.ReactNode;
 };
-declare function SettingsProfileCard({ name, email, icon }: SettingsProfileCardProps): any;
+declare function SettingsProfileCard({ name, email, icon }: SettingsProfileCardProps): react.JSX.Element;
 
 type SettingsSearchBarProps = {
     placeholder?: string;
     onChange?: (value: string) => void;
 };
-declare function SettingsSearchBar({ placeholder, onChange }: SettingsSearchBarProps): any;
+declare function SettingsSearchBar({ placeholder, onChange }: SettingsSearchBarProps): react.JSX.Element;
 
 declare function setCssProperties(theme: ThemeType): void;
 declare function applyTheme(themeId: string, customThemes?: ThemeType[]): ThemeType | {
