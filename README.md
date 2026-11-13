@@ -1,4 +1,4 @@
-# settings-page-component
+# Settings Page Component
 
 A lightweight, modern, animated & fully responsive Settings page component for React applications with built-it theming support.
 
