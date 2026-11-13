@@ -45,11 +45,7 @@ npm install github:Vedang-Singh/settings-page
 
 ```tsx
 import { 
-  SettingsPage, 
-  SettingsThemesPage, 
-  applyTheme, 
-  thisOrDefaultThemeId,
-  type SettingsPageItemType 
+  SettingsPage, SettingsThemesPage, applyTheme, thisOrDefaultThemeId, type SettingsPageItemType 
 } from "settings-page-component";
 
 // Initialize saved theme from local storage
@@ -63,8 +59,7 @@ export default function App() {
       description: "Customize theme, palette, and colors",
       icon: <span>🎨</span>, 
       content: (
-        <SettingsThemesPage 
-          onThemeChange={(newTheme) => {
+        <SettingsThemesPage onThemeChange={(newTheme) => {
             localStorage.setItem("app_theme", newTheme.id);
           }} 
         />
