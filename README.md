@@ -2,6 +2,12 @@
 
 A lightweight, modern, animated & fully responsive Settings page component for React applications with built-it theming support.
 
+<p align="center">
+<img src="./assets/mobile-preview.png" alt="Mobile View" width="28%" height=700 />
+  &nbsp;
+  <img src="./assets/desktop-preview.png" alt="Desktop View" width="68%" height=600 />
+</p>
+
 ---
 
 ## Table of Contents
