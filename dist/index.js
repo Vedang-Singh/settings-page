@@ -24,7 +24,7 @@ function styleInject(css, { insertAt } = {}) {
 }
 
 // src/SettingsPageComponent/styles/SettingsPage.css
-styleInject(":root {\n  --c1: #071b2b;\n  --c2: #dbe3e9;\n  --c3: #b9e4e8;\n  --c4: #eeeeee;\n  --ca: #fff;\n  --c1-text: #071b2b;\n  --c-shadow: rgba(0, 0, 0, 0.1);\n}\nbody {\n  background: var(--c4);\n  color: var(--c1-text);\n}\n@media (prefers-color-scheme: dark) {\n}\n.settings-h1 {\n  font-weight: normal;\n  font-size: 3rem;\n  margin: 30px 0 20px 0;\n}\n.settings-page,\n.settings-page * {\n  transition: all 0.1s ease-in-out;\n  -webkit-tap-highlight-color: transparent;\n}\n.settings-page {\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  gap: 1rem;\n  height: 100vh;\n  overflow: hidden;\n}\n.settings-page-item {\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  box-shadow: 0px 2px var(--c-shadow);\n  border: 1px solid var(--c3);\n  background: var(--ca);\n  border-radius: 8px;\n  padding: 22px 12px;\n  max-width: 450px;\n}\n.settings-page-items {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n  height: 60%;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n.settings-page-item-text {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\nspan.settings-page-item-text-t {\n  font-size: 1.3rem;\n}\nspan.settings-page-item-text-d {\n  opacity: 0.8;\n  font-size: 0.9rem;\n}\nspan.settings-page-item-icon {\n  background: var(--c3);\n  color: var(--c1);\n  border-radius: 150px;\n  height: 60px;\n  width: 60px;\n  min-width: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.settings-profile-card {\n  display: flex;\n  background: var(--c1);\n  color: var(--c4);\n  padding: 24px 18px;\n  border-radius: 20px;\n  box-shadow: 1px 2px 3px 3px var(--c-shadow);\n  gap: 1rem;\n  margin: 16px 0;\n  max-width: 450px;\n}\n.settings-profile-card-text {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: 0.4rem;\n}\n.settings-profile-card-icon {\n  height: 60px;\n  width: 60px;\n  background: var(--c3);\n  color: var(--c1);\n  border-radius: 150px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nspan.settings-profile-card-text-2 {\n  opacity: 0.8;\n}\n.settings-search-bar {\n  display: flex;\n  padding: 12px;\n  gap: 0.7rem;\n  background: var(--ca);\n  border-radius: 150px;\n  border: 1px solid var(--c3);\n  box-shadow: 0px 2px 0px var(--c-shadow);\n  padding-left: 20px;\n  max-width: 450px;\n}\n.settings-search-bar input {\n  width: 100%;\n  color: var(--c1-text);\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 1rem;\n}\n.settings-page-subpage-back {\n  display: flex;\n  gap: 0.4rem;\n  align-items: center;\n  justify-content: flex-start;\n}\n.settings-themes {\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n.settings-themes-group h2 {\n  margin: 0 0 0.75rem;\n  font-size: 1.1rem;\n}\n.settings-themes-list {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.settings-theme {\n  display: flex;\n  flex-direction: column;\n  gap: 0.75rem;\n  padding: 0.8rem;\n  border: 1px solid var(--c3);\n  border-radius: 8px;\n  background: var(--ca);\n  text-align: center;\n  width: 100px;\n  height: 80px;\n  min-width: 110px;\n}\n.settings-theme[data-selected=true] {\n  outline: 2px solid var(--c1);\n  outline-offset: 2px;\n}\n.settings-theme-palette {\n  display: flex;\n  flex-direction: row;\n  overflow: hidden;\n  border: 1px solid var(--c3);\n  border-radius: 6px;\n  height: 100%;\n}\n.settings-theme-color {\n  width: 100%;\n  display: block;\n}\n.settings-h2 {\n  font-weight: normal;\n}\n.clickable {\n  cursor: pointer;\n  transition: 0.1s;\n}\n.clickable:hover {\n  scale: 1.008;\n}\n.clickable:active {\n  scale: 0.98;\n}\n.settings-nav {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  gap: 0.8rem;\n  align-items: center;\n}\n.settings-nav[data-is-item-selected=true] {\n  display: none;\n}\nsection.settings-page-subpage {\n  margin-top: 30px;\n}\n.settings-nav > * {\n  width: 100%;\n  max-width: 450px;\n}\n");
+styleInject(":root {\n  --c1: #071b2b;\n  --c2: #dbe3e9;\n  --c3: #b9e4e8;\n  --c4: #eeeeee;\n  --ca: #fff;\n  --c1-text: #071b2b;\n  --c-shadow: rgba(0, 0, 0, 0.1);\n  --transition: 0.5s background;\n}\n@media (prefers-color-scheme: dark) {\n}\n.settings-h1 {\n  font-weight: normal;\n  font-size: 3rem;\n  margin: 30px 0 20px 0;\n}\n.settings-page,\n.settings-page * {\n  -webkit-tap-highlight-color: transparent;\n  transition: var(--transition);\n}\n.settings-page {\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  gap: 1rem;\n  height: 100vh;\n  overflow: hidden;\n  transition: var(--transition);\n  background: var(--c4);\n  color: var(--c1-text);\n}\n.settings-page-item {\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  box-shadow: 0px 2px var(--c-shadow);\n  border: 1px solid var(--c3);\n  background: var(--ca);\n  border-radius: 8px;\n  padding: 22px 12px;\n  max-width: 450px;\n}\n.settings-page-item[data-active=true] {\n  font-weight: bold;\n}\n.settings-page-items {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n  height: 60%;\n  overflow-y: auto;\n  overflow-x: hidden;\n}\n.settings-page-item-text {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\nspan.settings-page-item-text-t {\n  font-size: 1.3rem;\n}\nspan.settings-page-item-text-d {\n  opacity: 0.8;\n  font-size: 0.9rem;\n}\nspan.settings-page-item-icon {\n  background: var(--c3);\n  color: var(--c1);\n  border-radius: 150px;\n  height: 60px;\n  width: 60px;\n  min-width: 60px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.settings-profile-card {\n  display: flex;\n  background: var(--c1);\n  color: var(--c4);\n  padding: 24px 18px;\n  border-radius: 20px;\n  box-shadow: 1px 2px 3px 3px var(--c-shadow);\n  gap: 1rem;\n  margin: 16px 0;\n  max-width: 450px;\n}\n.settings-profile-card-text {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  gap: 0.4rem;\n}\n.settings-profile-card-icon {\n  height: 60px;\n  width: 60px;\n  background: var(--c3);\n  color: var(--c1);\n  border-radius: 150px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nspan.settings-profile-card-text-2 {\n  opacity: 0.8;\n}\n.settings-search-bar {\n  display: flex;\n  padding: 12px;\n  gap: 0.7rem;\n  background: var(--ca);\n  border-radius: 150px;\n  border: 1px solid var(--c3);\n  box-shadow: 0px 2px 0px var(--c-shadow);\n  padding-left: 20px;\n  max-width: 450px;\n}\n.settings-search-bar input {\n  width: 100%;\n  color: var(--c1-text);\n  border: none;\n  outline: none;\n  background: transparent;\n  font-size: 1rem;\n}\n.settings-page-subpage-back {\n  display: flex;\n  gap: 0.4rem;\n  align-items: center;\n  justify-content: flex-start;\n}\n.settings-themes {\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n.settings-themes-group h2 {\n  margin: 0 0 0.75rem;\n  font-size: 1.1rem;\n}\n.settings-themes-list {\n  display: flex;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n.settings-theme {\n  display: flex;\n  flex-direction: column;\n  gap: 0.75rem;\n  padding: 0.8rem;\n  border: 1px solid var(--c3);\n  border-radius: 8px;\n  background: var(--ca);\n  text-align: center;\n  width: 100px;\n  height: 80px;\n  min-width: 110px;\n}\n.settings-theme[data-selected=true] {\n  outline: 2px solid var(--c1);\n  outline-offset: 2px;\n}\n.settings-theme-palette {\n  display: flex;\n  flex-direction: row;\n  overflow: hidden;\n  border: 1px solid var(--c3);\n  border-radius: 6px;\n  height: 100%;\n}\n.settings-theme-color {\n  width: 100%;\n  display: block;\n}\n.settings-h2 {\n  font-weight: normal;\n}\n.clickable {\n  cursor: pointer;\n  transition: 0.1s;\n  transition: var(--transition);\n}\n.clickable:hover {\n  scale: 1.008;\n}\n.clickable:active {\n  scale: 0.98;\n}\n.settings-nav {\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  gap: 0.8rem;\n  align-items: center;\n}\n.settings-nav[data-is-item-selected=true] {\n  display: none;\n}\nsection.settings-page-subpage {\n  margin-top: 30px;\n}\n.settings-nav > * {\n  width: 100%;\n  max-width: 450px;\n}\n");
 
 // src/SettingsPageComponent/styles/LargeScreens.css
 styleInject("@media (min-width: 800px) {\n  .settings-nav {\n    padding: 10px 20px;\n    background: var(--c2);\n    gap: 0rem;\n    margin: 0px;\n  }\n  .settings-nav[data-is-item-selected=true] {\n    display: flex;\n  }\n  .settings-page {\n    gap: 2rem;\n    padding: 0;\n    display: grid;\n    justify-content: start;\n    grid-auto-flow: column;\n  }\n  .settings-page-item-text-d {\n    display: none;\n  }\n  .settings-page-items {\n    gap: 0;\n    margin-top: 30px;\n  }\n  .settings-page-item {\n    padding: 10px;\n    gap: 0;\n    box-shadow: none;\n    background: transparent;\n    border: none;\n  }\n  .settings-page-item:hover {\n    background: var(--ca);\n  }\n  span.settings-page-item-text-t {\n    font-size: 1.1rem;\n  }\n  span.settings-page-item-icon {\n    background: transparent;\n  }\n  .setting-pf-ctnr {\n    position: absolute;\n    bottom: 30px;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 92%;\n  }\n  .settings-h1 {\n    text-align: center;\n    font-size: 2rem;\n    margin-top: 50px;\n    margin-bottom: 30px;\n  }\n  .settings-search-bar {\n    box-shadow: none;\n    border-radius: 10px;\n  }\n  .settings-page-subpage {\n    width: 100%;\n    padding-top: 40px;\n  }\n  .settings-page-subpage .settings-h1 {\n    text-align: left !important;\n    font-size: 2.5rem;\n  }\n  .settings-profile-card {\n    box-shadow: none;\n    border-radius: 10px;\n  }\n}\n");
@@ -58,42 +58,51 @@ var itemVariants = {
 // src/SettingsPageComponent/components/SettingsPage.tsx
 import { motion } from "motion/react";
 
-// src/SettingsPageComponent/components/SettingsPageItem.tsx
+// src/SettingsPageComponent/styles/icons.tsx
 import { jsx, jsxs } from "react/jsx-runtime";
+var BackArrowIcon = () => /* @__PURE__ */ jsxs("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
+  /* @__PURE__ */ jsx("path", { d: "m12 19-7-7 7-7" }),
+  /* @__PURE__ */ jsx("path", { d: "M19 12H5" })
+] });
+var SearchIcon = () => /* @__PURE__ */ jsxs("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
+  /* @__PURE__ */ jsx("circle", { cx: "11", cy: "11", r: "8" }),
+  /* @__PURE__ */ jsx("path", { d: "m21 21-4.3-4.3" })
+] });
+var ProfileIcon = () => /* @__PURE__ */ jsxs("svg", { width: "124", height: "24", viewBox: "0 0 24 24", fill: "currentColor", children: [
+  /* @__PURE__ */ jsx("path", { fill: "none", d: "M0 0h24v24H0z" }),
+  /* @__PURE__ */ jsx("path", { d: "M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z" })
+] });
+var SettingsIcon = () => /* @__PURE__ */ jsxs("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "currentColor", children: [
+  /* @__PURE__ */ jsx("path", { fill: "none", d: "M0 0h24v24H0z" }),
+  /* @__PURE__ */ jsx("path", { d: "M12 1L21.5 6.5V17.5L12 23L2.5 17.5V6.5L12 1ZM12 3.311L4.5 7.65311V16.3469L12 20.689L19.5 16.3469V7.65311L12 3.311ZM12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" })
+] });
+
+// src/SettingsPageComponent/components/SettingsPageItem.tsx
+import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
 function SettingsPageItem({
-  options: { id, title, description, icon }
+  options: { id, title, description, icon = /* @__PURE__ */ jsx2(SettingsIcon, {}) },
+  active = false
 }) {
-  return /* @__PURE__ */ jsxs("div", { id, className: "settings-page-item clickable", children: [
-    /* @__PURE__ */ jsx("span", { className: "settings-page-item-icon", children: icon }),
-    /* @__PURE__ */ jsxs("span", { className: "settings-page-item-text", children: [
-      /* @__PURE__ */ jsx("span", { className: "settings-page-item-text-t", children: title }),
-      /* @__PURE__ */ jsx("span", { className: "settings-page-item-text-d", children: description })
+  return /* @__PURE__ */ jsxs2("div", { id, className: "settings-page-item clickable", "data-active": active, children: [
+    /* @__PURE__ */ jsx2("span", { className: "settings-page-item-icon", children: icon }),
+    /* @__PURE__ */ jsxs2("span", { className: "settings-page-item-text", children: [
+      /* @__PURE__ */ jsx2("span", { className: "settings-page-item-text-t", children: title }),
+      /* @__PURE__ */ jsx2("span", { className: "settings-page-item-text-d", children: description })
     ] })
   ] });
 }
 
 // src/SettingsPageComponent/components/SettingsProfileCard.tsx
-import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
-function SettingsProfileCard({ name, email, icon }) {
-  return /* @__PURE__ */ jsxs2("div", { className: "settings-profile-card", children: [
-    /* @__PURE__ */ jsx2("div", { className: "settings-profile-card-icon", children: icon }),
-    /* @__PURE__ */ jsxs2("div", { className: "settings-profile-card-text", children: [
-      /* @__PURE__ */ jsx2("span", { className: "settings-profile-card-text-1", children: name }),
-      /* @__PURE__ */ jsx2("span", { className: "settings-profile-card-text-2", children: email })
+import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
+function SettingsProfileCard({ name, email, icon = /* @__PURE__ */ jsx3(ProfileIcon, {}) }) {
+  return /* @__PURE__ */ jsxs3("div", { className: "settings-profile-card", children: [
+    /* @__PURE__ */ jsx3("div", { className: "settings-profile-card-icon", children: icon }),
+    /* @__PURE__ */ jsxs3("div", { className: "settings-profile-card-text", children: [
+      /* @__PURE__ */ jsx3("span", { className: "settings-profile-card-text-1", children: name }),
+      /* @__PURE__ */ jsx3("span", { className: "settings-profile-card-text-2", children: email })
     ] })
   ] });
 }
-
-// src/SettingsPageComponent/styles/icons.tsx
-import { jsx as jsx3, jsxs as jsxs3 } from "react/jsx-runtime";
-var BackArrowIcon = () => /* @__PURE__ */ jsxs3("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ jsx3("path", { d: "m12 19-7-7 7-7" }),
-  /* @__PURE__ */ jsx3("path", { d: "M19 12H5" })
-] });
-var SearchIcon = () => /* @__PURE__ */ jsxs3("svg", { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", children: [
-  /* @__PURE__ */ jsx3("circle", { cx: "11", cy: "11", r: "8" }),
-  /* @__PURE__ */ jsx3("path", { d: "m21 21-4.3-4.3" })
-] });
 
 // src/SettingsPageComponent/components/SettingsSearchBar.tsx
 import { jsx as jsx4, jsxs as jsxs4 } from "react/jsx-runtime";
@@ -168,7 +177,7 @@ function SettingsPage({ items, profileCard, searchBar, options }) {
             {
               variants: itemVariants,
               onClick: () => setSelectedPageId(item.id),
-              children: /* @__PURE__ */ jsx5(SettingsPageItem, { options: item })
+              children: /* @__PURE__ */ jsx5(SettingsPageItem, { options: item, active: selectedPageId == item.id })
             },
             item.id
           ))

@@ -4,13 +4,13 @@ type SettingsPageItemType = {
     id: string;
     title: string;
     description: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
     content: React.ReactNode;
 };
 type SettingsPageProfileCardType = {
     email: string;
     name: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
     content: React.ReactNode;
 };
 type SettingsPageSearchBarType = {
@@ -141,7 +141,7 @@ declare function SettingsThemesPage({ excludePreloadedThemes, hideAllPreloadedTh
 type SettingsProfileCardProps = {
     name: string;
     email: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
 };
 declare function SettingsProfileCard({ name, email, icon }: SettingsProfileCardProps): react.JSX.Element;
 
