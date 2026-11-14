@@ -103,7 +103,7 @@ export default function SettingsPage({ items, profileCard, searchBar, options }:
               variants={itemVariants as unknown as Variants}
               onClick={() => setSelectedPageId(item.id)} >
               {
-                <SettingsPageItem options={item} />
+                <SettingsPageItem options={item} active={selectedPageId==item.id} />
               }
             </motion.div>
           ))}

@@ -1,4 +1,4 @@
-import { RiBrushLine, RiDatabase2Line, RiShieldLine, RiUserLine } from "@remixicon/react";
+import { RiBrushLine, RiDatabase2Line, RiShieldLine } from "@remixicon/react";
 import { applyTheme, thisOrDefaultThemeId, SettingsThemesPage, SettingsPage } from "./SettingsPageComponent";
 
 applyTheme(thisOrDefaultThemeId(localStorage.getItem("app_theme")));
@@ -32,7 +32,6 @@ export default function App()
   const profileCard = {
     email: "user@example.com",
     name: "Vedang Singh",
-    icon: <RiUserLine />,
     content: <p>Profile related settings goes here...</p>,
   }
 

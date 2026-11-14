@@ -1,15 +1,17 @@
+import { SettingsIcon } from "../styles/icons";
 import type { SettingsPageItemType } from "../types/SettingsPageTypes";
 
 type SettingsPageItemProps = {
     options: SettingsPageItemType;
+    active?: boolean
 };
 
 export default function SettingsPageItem({
-    options: { id, title, description, icon }
+    options: { id, title, description, icon = <SettingsIcon /> }, active = false
 }: SettingsPageItemProps)
 {
     return (
-        <div id={id} className="settings-page-item clickable">
+        <div id={id} className="settings-page-item clickable" data-active={active}>
             <span className="settings-page-item-icon">
                 {icon}
             </span>

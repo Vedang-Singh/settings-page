@@ -88,7 +88,6 @@ export default function App() {
   const profileCard = {
     name: "Alex Doe",
     email: "alex@example.com",
-    icon: <span>👤</span>,
     content: <div>Manage your profile information here...</div>,
   };
 

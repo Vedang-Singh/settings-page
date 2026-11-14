@@ -2,14 +2,14 @@ export type SettingsPageItemType = {
   id: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   content: React.ReactNode;
 };
 
 export type SettingsPageProfileCardType = {
   email: string;
   name: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   content: React.ReactNode;
 };
 

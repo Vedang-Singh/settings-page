@@ -1,10 +1,12 @@
+import { ProfileIcon } from "../styles/icons";
+
 type SettingsProfileCardProps = {
     name: string;
     email: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
 };
 
-export default function SettingsProfileCard({ name, email, icon }: SettingsProfileCardProps)
+export default function SettingsProfileCard({ name, email, icon = <ProfileIcon /> }: SettingsProfileCardProps)
 {
     return (
         <div className="settings-profile-card">
