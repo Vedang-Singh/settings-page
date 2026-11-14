@@ -1,6 +1,6 @@
 # Settings Page Component
 
-A lightweight, modern, animated & fully responsive Settings page component for React applications with built-it theming support.
+A lightweight, modern, animated & fully responsive Settings page component for React applications with built-in theming support.
 
 <p align="center">
 <img src="./assets/preview.png" alt="Preview"  />
