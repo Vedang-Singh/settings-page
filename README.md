@@ -3,9 +3,7 @@
 A lightweight, modern, animated & fully responsive Settings page component for React applications with built-it theming support.
 
 <p align="center">
-<img src="./assets/mobile-preview.png" alt="Mobile View" width="28%" height=700 />
-  &nbsp;
-  <img src="./assets/desktop-preview.png" alt="Desktop View" width="68%" height=600 />
+<img src="./assets/preview.png" alt="Preview"  />
 </p>
 
 ---
@@ -89,17 +87,13 @@ export default function App() {
 
   const profileCard = {
     name: "Alex Doe",
-    email: "alex.doe@example.com",
+    email: "alex@example.com",
     icon: <span>👤</span>,
     content: <div>Manage your profile information here...</div>,
   };
 
   return (
-    <SettingsPage 
-      items={items} 
-      profileCard={profileCard} 
-      searchBar={{ placeholder: "Search settings..." }} 
-    />
+    <SettingsPage items={items} profileCard={profileCard} />
   );
 }
 ```
