@@ -1,6 +1,6 @@
 # Settings Page Component
 
-A lightweight, modern, animated & fully responsive Settings page component for React applications with built-it theming support.
+A lightweight, modern, animated & fully responsive Settings page component for React applications with built-in theming support.
 
 <p align="center">
 <img src="./assets/cover.png" alt="Cover"  />
@@ -123,7 +123,7 @@ type SettingsPageItemType = {
   id: string;              // Unique identifier (e.g. 'appearance')
   title: string;           // Displayed title
   description: string;     // Short description underneath title
-  icon: React.ReactNode;   // Icon component or SVG
+  icon?: React.ReactNode;   // Icon component or SVG
   content: React.ReactNode;// The sub-page JSX rendered when selected
 };
 ```
@@ -133,7 +133,7 @@ type SettingsPageItemType = {
 type SettingsPageProfileCardType = {
   name: string;
   email: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   content: React.ReactNode;// Sub-page displayed when clicking the profile card
 };
 ```
