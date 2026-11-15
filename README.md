@@ -3,10 +3,15 @@
 A lightweight, modern, animated & fully responsive Settings page component for React applications with built-it theming support.
 
 <p align="center">
+<img src="./assets/cover.png" alt="Cover"  />
+</p>
+
+
+## Preview
+<p align="center">
 <img src="./assets/preview.png" alt="Preview"  />
 </p>
 
----
 
 ## Table of Contents
 
